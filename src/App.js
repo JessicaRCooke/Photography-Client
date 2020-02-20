@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
 import './App.css';
 
+
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+import MainGallery from './components/MainGallery';
+
+
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+    padding: 100,
+
+    marginLeft: 300,
+  
+  },
+  heading: {
+    flexGrow: 1,
+    fontFamily: 'Cormorant Garamond',
+    
+
+    
+    
+  },
+})
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const classes = useStyles();
+  return ( 
+    <div>
+   
+    <h1 className={classes.heading}> Jessica Cooke Photography </h1>
+
+    <div className={classes.root}>
+     <MainGallery />
+     <Router>
+     
+      </Router>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
